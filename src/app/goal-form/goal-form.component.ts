@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
 import { Goal } from '../goal';
 
 @Component({
@@ -8,7 +8,9 @@ import { Goal } from '../goal';
 })
 export class GoalFormComponent implements OnInit {
 
-  newGoal = new Goal(0,"","",newDate());
+  // newGoal = new Goal(0,"","",newDate());
+  
+  newGoal = new Goal(0,"","",new Date());
   @Output() addGoal = new EventEmitter<Goal>();
   
     submitGoal(){
@@ -21,6 +23,10 @@ export class GoalFormComponent implements OnInit {
 
 }
 
-function newDate(): Date {
-  throw new Error('Function not implemented.');
-}
+
+// function newDate(): Date {
+//   throw new Error('Function not implemented.');
+// }
+// function newDate(): Date {
+//   throw new Error('Function not implemented.');
+// }
