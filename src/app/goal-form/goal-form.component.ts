@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Goal } from '../goal';
 
 @Component({
   selector: 'app-goal-form',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoalFormComponent implements OnInit {
 
+  newGoal = new Goal(0,"","",newDate());
+  @Output() addGoal = new EventEmitter<Goal>();
+  
+    submitGoal(){
+  this.addGoal.emit(this.newGoal);
+    }
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+}
+
+function newDate(): Date {
+  throw new Error('Function not implemented.');
 }
